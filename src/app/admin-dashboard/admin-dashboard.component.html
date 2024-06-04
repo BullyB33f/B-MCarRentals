@@ -1,0 +1,158 @@
+<div class="adminpagebody">
+        
+    <div class="sidebar">
+
+        <div class="sidebaritem sidebarheader">
+            <h1>WELCOME ADMIN</h1>
+            <p>{{ currentdate | date }}</p>
+        </div>
+        <br>
+
+        <div class="sidebaritem" (click)="showform('1')">
+            <h3>ADD A VEHICLE</h3>
+            <div class="sidebarsubitem"></div >
+        </div>
+
+        <div class="sidebaritem " (click)="showform('2')">
+            <h3> ALL VEHICLES</h3>
+            <div class="sidebarsubitem"></div>
+        </div>
+
+        <div class="sidebaritem " (click)="showform('3')">
+            <h3> ALL USERS</h3>
+            <div class="sidebarsubitem"></div >
+        </div>
+
+        <div class="sidebaritem " >
+            <a routerLink="/login" (click)="logOutFunc()">LOGOUT</a>
+            <div class="sidebarsubitem"></div >
+        </div>
+
+    </div>
+
+
+
+    <div class="column2" *ngIf="homepage">
+            <div class="dashboardwelcome">
+                <h2>WELCOME TO THE ADMIN DASHBOARD</h2>
+                <img src="../assets/administrator.png">
+                <p>As an admin, you are able to:</p>
+                <div class="welcomefunctions">
+                    <h2>ADD VEHICLES TO THE DATABASE</h2>
+                    <h2>EDIT VEHICLES AND USERS</h2>
+                    <h2>DELETE VEHICLES AND USERS</h2>
+                    <h2>VIEW VEHICLES AND USERS</h2>
+                </div>
+            </div>
+    </div>
+
+    <div class="column2 scroller" *ngIf="alluserpage">
+        <h2 class="formheader">ALL USERS</h2>
+        <div class="userdata" *ngFor="let user of users">
+            <div class="innerdata">
+                <h4>NAME: {{ user['user_fullname'] }}</h4>
+                <h4>AGE: {{ user['user_age'] }}</h4>
+                <h4>DRIVER'S LIC. NO.:{{ user['drivers_license_number'] }}</h4>
+                <h4>TRN: {{ user['trn'] }}</h4>
+                <h4>EMAIL: {{ user['user_email'] }}</h4>
+                <h4>CURRENT VEHICLE: {{ user['current_vehicle_name'] }}</h4>
+                <h4>ROLE: {{ user['role'] }}</h4>
+            </div>
+            
+            <div class="user-actions">
+                <a routerLink="/userdashboard/{{ user['user_id'] }}" class="actionbtn">VIEW</a>
+                <a routerLink="/edituser/{{ user['user_id'] }}">EDIT</a>
+                <a routerLink="/deleteuser/{{ user['user_id'] }}" class="actionbtn">DELETE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column2 scroller" *ngIf="allvehiclepage">
+        <h2 class="formheader">ALL VEHICLES</h2>
+
+        <div class="vehicle_data" *ngFor="let vehicle of vehicles">
+            <img src="http://localhost:8888/uploads/{{ vehicle['main_img']}}" id="mainimg">
+
+            <div class="vehicle-info">
+                <h4>{{ vehicle['make'] }} {{ vehicle['model'] }}</h4>
+                <h4>{{ vehicle['price'] }} PER/DAY</h4>
+                <h4>MINIMUM RENTAL DAYS: {{ vehicle['minimum_rentdays'] }}</h4>
+                <h4>CURRENT RENTER: {{ vehicle['current_renter'] }}</h4>
+                <h4>CURRENT RENTER: {{ vehicle['user_id'] }}</h4>
+            </div>
+
+            <div class="vehicles-action">
+                <a routerLink="/singleCar/{{ vehicle['vehicle_id'] }}" class="actionbtn">VIEW</a>
+                <a routerLink="/editvehicle/{{ vehicle['vehicle_id'] }}" class="actionbtn">EDIT</a>
+                <a routerLink="/deletevehicle/{{ vehicle['vehicle_id'] }}" class="actionbtn">DELETE</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+    <div class="column2" *ngIf="addvehiclepage">
+        <h2 class="formheader">ADD NEW VEHICLE</h2>
+        <form  #newVehicleForm >
+
+            <div class="inputbox">
+                <span>VEHICLE MAKE</span>
+                <input type="text" name="make" id="make" placeholder="Vehicle make" ngModel>
+            </div>
+
+            <div class="inputbox">
+                <span>VEHICLE MODEL</span>
+                <input type="text" name="model" id="model" placeholder="Vehicle model" ngModel>
+            </div>
+
+            <div class="inputbox">
+                <span>VEHICLE PRICE</span>
+                <input type="text" name="price" id="price" placeholder="Rental Price" ngModel>
+            </div>
+
+            <div class="inputbox">
+                <span>MINIMUM RENT DAYS</span>
+                <input type="text" name="minimum_rentdays" id="minimum_rentdays" placeholder="Minimum Rental Days" ngModel>
+            </div>
+
+            <div class="inputbox">
+                <span>VEHICLE CATEGORY</span>
+                <input type="text" name="category" id="category" placeholder="Vehicle Category: 4x4, SUV, Coupe, Sedan" ngModel>
+            </div>
+
+            <div class="inputbox">
+                <span>VEHICLE DESCRIPTION</span>
+                <input type="text" name="description" id="vehicle Description"  placeholder="VEHICLE DESCRIPTION" ngModel>
+            </div>
+
+            <div class="inputbox">
+                <span>MAIN IMAGE</span>
+                <input type="file" name="main_img" id="mainimgupload" class="imgupload" ngModel>
+            </div>
+            <div class="inputbox">
+                <span>IMAGE 2</span>
+                <input type="file" name="img2" id="hoverimgupload1" class="imgupload" ngModel>
+            </div>
+            <div class="inputbox">
+                <span>IMAGE 3</span>
+                <input type="file" name="img3" id="hoverimgupload2" class="imgupload" ngModel>
+            </div>
+            <div class="inputbox">
+                <span>IMAGE 4</span>
+                <input type="file" name="img4" id="hoverimgupload3" class="imgupload" ngModel>
+            </div>
+            <div class="inputbox">
+                <span>IMAGE 5</span>
+                <input type="file" name="img5" id="hoverimgupload4" class="imgupload">
+            </div>
+                <input type="submit" id="submitbtn" value="ADD VEHICLE" (click)="saveVehicle(newVehicleForm)">
+        </form>
+
+    </div>
+
+
+
+   
+</div>

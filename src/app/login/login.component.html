@@ -1,0 +1,39 @@
+<div class="loginbody">
+
+    <div id="formbox">
+
+        <h2 class="staatliches-regular">LOGIN</h2>
+        <div class="btn-box">
+            <button class="formbtn staatliches-regular" (click)="adminView()" [ngClass]="bntStyle">ADMIN</button>
+            <button class="formbtn staatliches-regular" (click)="userView()" [ngClass]="bntStyle2">USER</button>
+        </div>
+
+
+        <form class="adminlogin" *ngIf="admin" (ngSubmit)="onAdminLogin(adminLoginForm)" #adminLoginForm="ngForm">
+            <h3 class="staatliches-regular">Logging In As Admin</h3>
+            <input type="text" name="trn" class="forminput staatliches-regular" ngModel placeholder="TRN">
+            <input type="text" name="password" class="forminput staatliches-regular" ngModel placeholder="PASSWORD">
+            <input type="submit" class="formbtn staatliches-regular" value="LOGIN">
+
+            <h3 class="staatliches-regular" *ngIf="hasError" style="color: red;">
+                {{ displaymsg }}
+            </h3>
+        </form>
+
+
+        <form *ngIf="user" class="userlogin" (ngSubmit)="onLogin(userLoginForm)" #userLoginForm="ngForm">
+            <h3 class="staatliches-regular">Logging In As User</h3>
+            
+            <input type="text" name="trn" id="trn" class="forminput staatliches-regular" placeholder="ENTER TRN" ngModel>
+            <input type="password" name="password" id="password" class="forminput staatliches-regular" placeholder="PASSWORD" ngModel>
+            <input type="submit" class="formbtn staatliches-regular" value="LOGIN ">
+
+            <h3 class="staatliches-regular" *ngIf="hasError" style="color: red;">
+                {{ errMsg }}
+            </h3>
+        </form>
+
+
+        <a href="/register" class="staatliches-regular" style="text-decoration: underline; margin: 3%;">Don't Have An Account? Register Now</a>
+    </div>
+</div>

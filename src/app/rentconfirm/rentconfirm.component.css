@@ -1,0 +1,60 @@
+.faux-body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    background-size: 200% 200% ;
+    animation: glow 5s infinite alternate-reverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#confirmbox{
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    display: flex;
+    animation: loadin 2.5s;
+}
+
+#confirmbox .greetingbox{
+    width: 50%;
+    height: 100%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+#confirmbox iframe{
+    width: 50%;
+    height: 100%;
+    background-color: grey;
+}
+
+@keyframes glow {
+    from{
+        background-position: 10%;
+    }
+    to{
+        background-position: 90%;
+    }
+}
+
+@keyframes loadin {
+    from{
+        transform: translateX(700px);
+        opacity: 0.2;
+        }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+}
+

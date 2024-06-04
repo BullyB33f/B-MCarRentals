@@ -1,0 +1,30 @@
+<div id="allcarsbody">
+
+    <a href="/home" id="bthome">&#8592; BACK TO HOME</a>
+    <a href="/allcars" id="bthome"><h2>&#8592;	BACK TO FLEET</h2></a>
+
+
+    <div id="fleet-header">
+        <h2>SEARCH RESULTS FOR {{ vehicles['make'] }} VEHICLES</h2>
+
+       
+    </div>
+
+    <div id="carslist" *ngIf="vehicleHasData">
+            <div class="carcard" *ngFor="let vehicle of vehicles">
+                <img src="http://localhost:8888/uploads/{{ vehicle['main_img']}}">
+                <div class="carinfo">
+                    <h2>{{ vehicle['make'] }} {{ vehicle['model'] }}</h2>
+                    <p>{{ vehicle['price'] }} P/DAY</p>
+                    <p>{{ vehicle['category'] }}</p>
+                    <a routerLink="/singleCar/{{ vehicle['vehicle_id'] }}" class="rentbtn">RENT NOW</a>
+                </div>
+            </div>
+    </div>
+
+    <div class="noVehicles" *ngIf="!vehicleHasData">
+            <img src="https://media.tenor.com/sKDzNg2OwAsAAAAj/sad-face-emoji.gif">
+            <h2>No results found...</h2>
+    </div>
+</div>
+

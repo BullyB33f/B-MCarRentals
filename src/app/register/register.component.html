@@ -1,0 +1,15 @@
+<div class="registerbody">
+    <h2 class="staatliches-regular">REGISTER</h2>
+    <div id="formbox">
+        <form (ngSubmit)="registerUser(registerForm)" #registerForm="ngForm">
+            <input type="text" name="user_fullname" class="forminput staatliches-regular" placeholder="FULL NAME" ngModel>
+            <input type="text" name="user_age" class="forminput staatliches-regular" placeholder="AGE" ngModel>
+            <input type="text" name="drivers_license_number" class="forminput staatliches-regular" placeholder="DRIVER'S LICENSE NO." ngModel>
+            <input type="text" name="trn" class="forminput staatliches-regular" placeholder="TRN" ngModel>
+            <input type="text" name="user_email" class="forminput staatliches-regular" placeholder="EMAIL" ngModel>
+            <input type="text" name="user_password" class="forminput staatliches-regular" placeholder="PASSWORD" ngModel>
+            <input type="submit" class="formbtn staatliches-regular" value="REGISTER">
+        </form>
+        <a href="/login" class="staatliches-regular" style="text-decoration: underline;">ALREADY HAVE AN ACCOUNT? LOG IN NOW</a>
+    </div>
+</div>

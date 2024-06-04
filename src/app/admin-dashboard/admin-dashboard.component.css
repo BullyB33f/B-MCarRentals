@@ -1,0 +1,220 @@
+.adminpagebody{
+    width: 100%;
+    height: fit-content;
+    transition: 1s;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableinfo, .tablehead{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    align-items: center;
+}
+
+.tableinfo h4, .tablehead h4{
+    width: 10%;
+    font-size: 15px;
+    text-wrap: wrap;
+}
+
+.sidebar{
+    width: 200px;
+    height: 110vh;
+    background-color: black;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    padding: 2%;
+}
+.sidebar .sidebaritem{
+    color: white;
+    margin: 10% 0;
+    width: 100%;
+    height: fit-content;
+    transition: 0.6s;
+    cursor: pointer;
+}
+.sidebar .sidebaritem a{
+    color: white;
+}
+.sidebar .sidebaritem .sidebarsubitem{
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    transition: 0.6s;
+}
+
+.column2{
+    width: 70%;
+    height: 95vh;
+    background-color: #eceaea;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    overflow-y: scroll;
+}
+
+.sidebarheader{
+    margin-bottom: 50%;
+    border-bottom: 1px solid white;
+}
+
+.dashboardwelcome{
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+
+.dashboardwelcome img{
+    width: 100px;
+}
+.welcomefunctions{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcomefunctions h2{
+    width: 20%;
+    font-size: 15px;
+}
+
+.formheader{
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+}
+.column2 form{
+    height: 70%;
+    width: 70%;
+    margin: 2% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column2 form .inputbox{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 40%;
+    height: 70px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+
+.inputbox input, .inputbox textarea{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 1%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+
+input[type=submit]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.6s;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+input[type=submit]:hover{
+    color: white;
+    background-color: black;
+}
+
+.vehicle_data{
+    width: 100%;
+    height: fit-content;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+
+}
+
+.vehicles-action{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vehicles-action a{
+    background-color: white;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.vehicle_data img{
+    height: 100%;
+    width: 200px;
+    border: 1px solid black;
+}
+
+
+.userdata{
+    width: 100%;
+    padding: 2%;
+    height: 200px;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+.innerdata{
+    padding: 2%;
+    width: 70%;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+.userdata h4{
+    width: 40%;
+}
+.user-actions{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+
+.user-actions a{
+    background-color: white;
+    height: 40px;
+    text-align: center;
+    margin: 2%;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+
+

@@ -1,0 +1,59 @@
+<div id="rentcarbody">
+    <div id="header">
+        <a href="/home"><h4>&#8592;	BACK TO HOME</h4></a>
+        <a href="/allcars"><h2>&#8592;	BACK TO FLEET</h2></a>
+        <a href="/admindashboard" *ngIf="userdata['role'] == 'admin'"><h2>&#8592;	BACK TO ADMIN</h2></a>
+    </div>
+
+    <div class="cardisplay" *ngIf="hasData">
+        <div class="carholder">
+            <img id="mainimg" src="http://localhost:8888/uploads/{{ vehicle['main_img']}}" appHighlight>
+            <div class="secondary-images">
+                <img class="hoverimg activeimg" id="hoverimg1" src="http://localhost:8888/uploads/{{ vehicle['main_img']}}" appHighlight>
+                <img class="hoverimg" id="hoverimg2" src="http://localhost:8888/uploads/{{ vehicle['img2'] }}" appHighlight>
+                <img class="hoverimg" id="hoverimg3" src="http://localhost:8888/uploads/{{ vehicle['img3'] }}" appHighlight>
+                <img class="hoverimg" id="hoverimg4" src="http://localhost:8888/uploads/{{ vehicle['img4'] }}" appHighlight>
+                <img class="hoverimg" id="hoverimg5" src="http://localhost:8888/uploads/{{ vehicle['img5'] }}" appHighlight>
+            </div>
+            <div class="carinfo">
+                <h2>{{ vehicle['make'] }} {{ vehicle['model'] }}</h2>
+                <p>${{ vehicle['price'] }} PER/DAY</p>
+                <p>{{ vehicle['minimum_rentdays'] }} MINIMUM RENTAL</p>
+                <p> CATEGORY: {{ vehicle['category'] }}</p>
+                <p>
+                   {{ vehicle['description'] }}
+                </p>
+                <p>{{ vehicle['rent_status'] }}</p>
+                <p *ngIf="userdata['role'] == 'admin'">Current User ID:{{ vehicle['user_id'] }}</p>
+                <p *ngIf="userdata['role'] == 'admin'"> Current Renter Name: {{ vehicle['current_renter'] }}</p>
+                <p *ngIf="userdata['role'] == 'admin'">Rent Start: {{ vehicle['rent_start'] }}</p>
+                <p *ngIf="userdata['role'] == 'admin'">Rent Start: {{ vehicle['rent_end'] }}</p>
+            </div>
+        </div>
+       
+        <a  *ngIf="vehicle['rent_status'] == 'available' && !showform && userdata['current_vehicle_id'] == 'none' && userdata['role'] == 'user'" (click)="showRentForm()" >
+            RENT VEHICLE</a>
+
+        <a href="#" *ngIf="vehicle['rent_status'] == 'not available' && userdata['current_vehicle_id'] == 'none' && userdata['role'] == 'user'" class="notavailable">
+            THIS VEHICLE IS CURRENTLY UNAVAILABLE</a>
+
+        <a href="#" *ngIf="userdata['current_vehicle_id'] != 'none' && vehicle['rent_status'] == 'available' && userdata['role'] == 'user'" class="notavailable" >
+            YOU CANNOT RENT MORE THAN ONE VEHICLE AT ONCE</a> 
+
+        <a href="#" class="notavailable" *ngIf="displayMsg">
+            YOU MUST BE LOGGED IN TO RENT  THIS VEHICLE</a> 
+
+        
+
+        <form id="rent_vehicle_form" *ngIf="showform" (ngSubmit)="rentVehicle(rentVehicleForm)" #rentVehicleForm="ngForm">
+            <h3>CONFIRM YOUR INFORMATION</h3>
+            <input type="text" ngModel name="user_id" placeholder="USER ID" required >
+            <input type="text" ngModel name="current_renter" placeholder="FULL NAME" required>
+            <input type="date" ngModel name="rent_start" placeholder="START OF RENTAL DATE" required>
+            <input type="date" ngModel name="rent_end" placeholder="END OF RENTAL DATE" required>
+            <input type="submit" value="FINISH">
+            
+        </form>
+    </div>
+</div>
+

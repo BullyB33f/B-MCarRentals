@@ -1,0 +1,14 @@
+<div id="nav">
+    <h2><a href="/home">B&M CAR RENTALS</a> </h2>
+    <ul>
+        <li ><a href="/allcars">VIEW FLEET</a></li>
+        <li><a href='/contact'>ABOUT </a></li>
+    </ul>
+    <div id="navlogin" *ngIf="isEmpty"><a href='/login'>LOG IN/REGISTER <img src="../assets/account.png"></a></div>
+    <div id="navlogin" *ngIf="!isEmpty && userStatus && !adminStatus">
+        <a href="/userdashboard/{{ userdata['user_id']}}">MY PROFILE <!--<img src="../assets/account.png">--></a> 
+        </div>
+    <div id="navlogin" *ngIf="!isEmpty && adminStatus && !userStatus">
+        <a href="/admindashboard">ADMIN DASHBOARD <!--<img src="../assets/account.png">--></a> 
+        </div>
+</div>

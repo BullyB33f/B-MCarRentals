@@ -1,0 +1,68 @@
+<div class="editvehiclediv">
+    <h2 class="staatliches-regular">EDIT VEHICLE</h2>
+    <div class="imgholder">
+        <img src="http://localhost:8888/uploads/{{ vehicle['main_img']}}">
+        <img src="http://localhost:8888/uploads/{{ vehicle['img2'] }}">
+        <img src="http://localhost:8888/uploads/{{ vehicle['img3'] }}">
+        <img src="http://localhost:8888/uploads/{{ vehicle['img4'] }}">
+        <img src="http://localhost:8888/uploads/{{ vehicle['img5'] }}">
+        <div class="imgtitles">
+            <h3>IMAGE 1</h3>
+            <h3>IMAGE 2</h3>
+            <h3>IMAGE 3</h3>
+            <h3>IMAGE 4</h3>
+            <h3>IMAGE 5</h3>
+        </div>
+    </div>
+
+    <form (ngSubmit)="updateVehicle(vehicleForm)" #vehicleForm="ngForm" >
+
+        <div class="inputbox">
+            <h4>VEHICLE MAKE</h4>
+            <input type="text" ngModel name="make" id="make" placeholder="Vehicle make" >
+        </div>
+        
+        <div class="inputbox">
+            <h4>VEHICLE MODEL</h4>
+            <input type="text" ngModel name="model" id="model" placeholder="Vehicle model" >
+        </div>
+
+        <div class="inputbox">
+            <h4>PRICE PER DAY</h4>
+            <input type="text" ngModel name="price" id="price" placeholder="Rental Price" >
+        </div>
+
+        <div class="inputbox">
+            <h4>MINIMUM RENTAL DAYS</h4>
+            <input type="text" ngModel name="minimum_rentdays" id="minimum_rentdays" placeholder="Minimum Rental Days" >
+        </div>
+
+        <div class="inputbox">
+            <h4>VEHICLE DESCRIPTION</h4>
+            <input type="text" ngModel name="description" id="description" placeholder="description" >
+        </div>
+
+        <div class="inputbox">
+            <h4>CURRENT RENTER ID</h4>
+            <input type="text" ngModel name="user_id" readonly>
+        </div>
+
+        <div class="inputbox">
+            <h4>CATEGORY</h4>
+            <input name="category" id="category" ngModel>
+        </div>
+
+        <div class="inputbox">
+            <h4>RENT STATUS</h4>
+            <input name="rent_status" id="rent_status" ngModel>
+        </div>
+
+        <div class="inputbox">
+            <h4>CURRENT RENTER NAME</h4>
+            <input name="current_renter" id="current_renter" ngModel readonly>
+        </div>
+
+        <input type="submit" id="submitbtn" value="EDIT VEHICLE">
+    </form>
+
+</div>

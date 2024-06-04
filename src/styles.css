@@ -1,1 +1,225 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.staatliches-regular {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  #allcarsbody{
+    width: 100%;
+    height: fit-content;
+    padding: 2% 4%;
+    background-color: #f1f1f1;
+}
+
+#bthome, #fleet-header{
+    color: black;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#fleet-header{
+    margin: 3% 0;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+#fleet-header h2{
+    margin-bottom: 3%;
+}
+#filter-box{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    width: 50%;
+    height: fit-content;
+    padding:  2%;
+    background-color: #ccc;
+    border-radius: 20px;
+}
+.filterform{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-weight: 300;
+    height: fit-content;
+}
+.filterform input[type=submit]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 1%;
+}
+
+.checkcontainer{
+    width: 30%;
+}
+
+#categoryfilterform .checkcontainer{
+    width: 20%;
+}
+
+.filter_opener{
+    width: 30%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 1%;
+    background-color: white;
+}
+
+.activebtn{
+    background-color: black;
+    color: white;
+}
+
+select{
+    width: 20%;
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+#selectionsbox{
+    margin: 2% 0;
+    width: 100%;
+}
+
+#selectionsbox input {
+    width: 15%;
+    margin: 1%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.578);
+    text-align: center;
+    border: none;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+#filtersubmit{
+    width: 15%;
+    background-color: white;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.6s;
+}
+
+#filtersubmit:hover{
+    background-color: black;
+    color: white;
+}
+
+.carslist, #carslist{
+    width: 100%;
+    margin: 5% auto;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+}
+
+.noVehicles{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+.carcard{
+    border: 1px solid black;
+    width: 350px;
+    margin: 3%;
+    height: 400px;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.503);
+    /* padding: 1%; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: 0.6s;
+    background-color: white;
+}
+
+.carcard img{
+    width: 100%;
+    height: 60%;
+}
+.carinfo{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: smaller;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-align: center;
+}
+
+.carinfo h2{
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.rentbtn{
+    width: 100%;
+    height: 40px;
+    background-color: #ccc;
+    text-align: center;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: none;
+}
+
+
+.carcard:hover{
+    transform: scale(1.03);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.503);
+}

@@ -1,0 +1,41 @@
+<div class="editvehiclediv deletevehicle">
+    <h2 class="staatliches-regular">ARE YOU SURE YOU WANT DELETE THIS USER? </h2>
+  
+
+    <form (ngSubmit)="deleteUser(deleteUserForm)" #deleteUserForm="ngForm" >
+
+        
+        <div class="inputbox">
+                <h4>NAME</h4>
+                <input type="text" ngModel name="fullname" readonly >
+        </div>
+        <div class="inputbox">
+                <h4>AGE</h4>
+                <input type="text" ngModel name="age"  readonly>
+        </div>
+        <div class="inputbox">
+            <h4>Driver's License No.</h4>
+            <input type="text" ngModel name="driverno" readonly>
+        </div>
+        <div class="inputbox">
+        <h4>TRN</h4>
+            <input type="text" ngModel name="trn"  readonly>
+        </div>
+        <div class="inputbox">
+            <h4>EMAIL</h4>
+            <input type="text" ngModel name="email" readonly>
+        </div>
+        <div class="inputbox">
+            <h4>PASSWORD</h4>
+            <input type="password" ngModel name="password"  readonly>
+        </div>
+        <div class="inputbox">
+            
+        </div>
+            
+           
+            <input type="submit" id="submitbtn" value="DELETE USER">
+    </form>
+
+</div>
+

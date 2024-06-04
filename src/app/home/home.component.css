@@ -1,0 +1,238 @@
+#hero-section{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://4kwallpapers.com/images/wallpapers/cadillac-escalade-v-luxury-suv-2023-4000x2667-8221.jpeg');
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    animation: slider 20s linear infinite;
+}
+
+@keyframes slider{
+    30%{
+        background-image: url('https://4kwallpapers.com/images/wallpapers/cadillac-escalade-v-luxury-suv-2023-4000x2667-8221.jpeg');
+    }
+    33%{
+        background-image: url('https://w0.peakpx.com/wallpaper/116/758/HD-wallpaper-toyota-land-cruiser-300-desert-2021-cars-ae-spec-suvs-toyota-land-cruiser-vx-r-2021-toyota-land-cruiser-toyota.jpg')
+    }
+    57%{
+        background-image: url('https://w0.peakpx.com/wallpaper/116/758/HD-wallpaper-toyota-land-cruiser-300-desert-2021-cars-ae-spec-suvs-toyota-land-cruiser-vx-r-2021-toyota-land-cruiser-toyota.jpg')
+    }    
+    60%{
+        background-image: url('https://cdn.motor1.com/images/mgl/XpwWv/s3/2020-mercedes-amg-e-63-limousine.jpg')
+    }
+    95%{
+        background-image: url('https://cdn.motor1.com/images/mgl/XpwWv/s3/2020-mercedes-amg-e-63-limousine.jpg')
+    }
+}
+
+.dancing-script {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 60px;
+    border-bottom: 2px solid white;
+}
+
+#hero-box{
+    height: 100%;
+    width: 40%;
+    padding: 2%;
+    background-color: rgba(46, 46, 46, 0.57);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: white;
+}
+.font40{
+   font-size: 40px;
+}
+.font30{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+#btn-box{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn-box a{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 0%;
+    transition: 0.6s;
+}
+#btn-box a:hover{
+    background-color: white;
+    color: black;
+}
+
+.hero-btn{
+    width: 40%;
+    background-color: white;
+    text-align: center;
+    color: black;
+    padding: 3%;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: ease 0.6s;
+}
+.hero-btn:hover{
+    color: white;
+    background-color: black;
+}
+
+#about-section{
+    width: 100%;
+    height: 70vh;
+    margin: 3% 0;
+    padding: 2%;
+}
+
+.title{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+#about-info, .display-case{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: grey;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size:larger;
+    align-items: center;
+    text-align: left;
+    padding: 2%;
+}
+#about-info p{
+    width: 30%;
+}
+
+#featured-vehicles{
+    padding: 4%;
+    margin: 4% 0;
+    width: 100%;
+    height: 90vh;
+}
+
+.section-title{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size:40px;
+    border-bottom: 2px solid black;
+}
+
+
+.featured-vehicle-card{
+    height: 80%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2%;
+    text-align: center;
+    box-shadow:  2px 5px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.347);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    transition: 0.6s;
+}
+
+
+.featured-vehicle-card h4{
+    color: white;
+    font-size: 25px;
+    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+}
+
+.featured-vehicle-card:nth-child(1){
+    background-image: URL('https://offroadium.com/wp-content/uploads/ford-ranger-to-raptor-conversion-7.jpg');
+}
+
+.featured-vehicle-card:nth-child(1):hover{
+    background-image: url('https://media0.giphy.com/media/MiF7yHD6ZoAP5PMQhJ/200w.gif?cid=6c09b952gszug7o22s79uanpoaer6q9zenw1gqhpba1b1u4r&ep=v1_gifs_search&rid=200w.gif&ct=g');
+}
+
+.featured-vehicle-card:nth-child(2){
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/000074680002.jpg?crop=0.699xw:1.00xh;0.133xw,0&resize=640:*');
+}
+
+.featured-vehicle-card:nth-child(2):hover{
+    background-image: url('https://64.media.tumblr.com/b2974332afd82b1e232e5701182486f4/tumblr_pvscvd3UfR1qms0coo1_500.gif');
+}
+
+
+.featured-vehicle-card:nth-child(3){
+    background-image: url('https://www.bmwusa.com/content/dam/bmw/common/vehicles/2022/my23/m-models/m5-sedan/overview/mobile/BMW-MY23-M5-Overview-Hero-Mobile.jpg');
+}
+.featured-vehicle-card:nth-child(3):hover{
+    background-image: url('https://media.tenor.com/S3pSPck5gCkAAAAM/m5.gif');
+}
+
+
+.featured-vehicle-card:nth-child(4){
+    background-image: url('https://assets-eu-01.kc-usercontent.com/3b3d460e-c5ae-0195-6b86-3ac7fb9d52db/96b61d18-0139-4855-b1d3-1a2f183c77f4/Mercedes%20E-Class%20Coupe%20%282%29.jpg');
+}
+.featured-vehicle-card:nth-child(4):hover{
+    background-image: url('https://68.media.tumblr.com/78683ec9897403e3ac2bbcad38c22ab4/tumblr_ocd995buzq1snsouro1_400.gif');
+}
+
+.card-btn{
+    width: 200px;
+    box-shadow:  2px 5px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid gray;
+
+}
+
+.featured-vehicle-card img{
+    width: 100%;
+}
+
+#testimonials-section{
+    width: 100%;
+    margin: 4% 0;
+    height: 70vh;
+    padding: 4%;
+}
+
+.testimonial{
+    margin: 2% 0;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    padding-left: 10%;
+    width: 50%;
+    background-size: 100% 100%;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    text-align: center;
+}
+
+.text h2{
+    border-bottom: 1px solid black;
+    margin-bottom: 1%;
+}

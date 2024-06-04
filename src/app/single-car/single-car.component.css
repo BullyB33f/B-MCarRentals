@@ -1,0 +1,172 @@
+#rentcarbody{
+    width: 100%;
+    height: fit-content;
+    padding: 2%;
+}
+
+#header{
+    width: 20%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#header a{
+    color: black;
+}
+#header h2{
+    margin: 3% 0;
+}
+.cardisplay{
+    width: 100%;
+    height: fit-content;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.cardisplay #mainimg{
+    width: 50%;
+    height: 500px;
+    margin: 2% 0;
+    background-color: #ccc;
+    animation: imgload 2s linear infinite alternate-reverse;
+    transition: 0.6s;
+}
+
+.secondary-images{
+    width: 10%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1%;
+}
+
+.hoverimg{
+    width: 100%;
+    height: 18%;
+    border-radius: 10px;
+    background-color: #ccc;
+    animation: imgload 2s linear infinite alternate-reverse;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.activeimg{
+    opacity: 1;
+    border: 2px solid black;
+}
+
+.carinfo{
+    width: 30%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 3%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+}
+.carinfo h2{
+    border-bottom: 2px solid #505050;
+    font-size: 35px;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+.carholder{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.cardisplay a, #rent_vehicle_form input[type=submit]{
+    margin: 2%;
+    width: 500px;
+    height: 50px;
+    padding: 1%;
+    padding-top: 1.5%;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.6s;
+}
+
+.cardisplay a:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cardisplay .notavailable{
+    width: 500px;
+    border: 1px solid gray;
+    color: gray;
+    box-shadow: none;
+    cursor: default;
+}
+
+.cardisplay .notavailable:hover{
+    box-shadow: none;
+}
+
+#rent_vehicle_form{
+    width: 60%;
+    height: fit-content;
+    margin: 4% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    align-items: center;
+}
+#rent_vehicle_form input{
+    width: 45%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 3% 0;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+#rent_vehicle_form h3{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+#rent_vehicle_form input[type=submit]{
+    margin: 2% auto;
+    background-color: white;
+    cursor: pointer;
+}
+#rent_vehicle_form input[type=submit]:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+@keyframes imgload{
+    from{
+        background-color: #ccc;
+    }
+    to{
+        background-color: #505050;
+    }
+}

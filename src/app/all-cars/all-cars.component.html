@@ -1,0 +1,132 @@
+<div id="allcarsbody">
+
+    <a href="/home" id="bthome">&#8592; BACK TO HOME</a>
+
+    <div id="fleet-header">
+        <h2>FLEET</h2>
+
+        <div id="filter-box">
+            <h3>Filter</h3>
+            <hr>
+            <br>
+            <div id="filterform">
+                <button class="filter_opener" (click)="showFilterForm(1)">MAKE</button>
+                <!-- <button class="filter_opener" (click)="showFilterForm(2)">PRICE</button> -->
+                <button class="filter_opener" (click)="showFilterForm(3)">CATEGORY</button>
+        </div>
+
+            <form class="filterform" id="makefilterform" *ngIf="makeform" (ngSubmit)="vehicleSearch(vehiclemakeform)" #vehiclemakeform="ngForm">
+
+                <div class="checkcontainer">
+                    <input type="checkbox" value="toyota" name="toyota" ngModel > TOYOTA
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="lexus" name="lexus"> LEXUS
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="Mercedes-Benz" name="mercedes-benz"> MERCEDES-BENZ
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="ford" name="ford"> FORD
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="audi" name="audi"> AUDI
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="bmw" name="bmw"> BMW
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="landrover" name="landrover"> LAND ROVER
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox"  ngModel value="porsche" name="porsche"> PORSCHE
+                </div>
+
+                <div class="checkcontainer">
+                    <input type="checkbox" ngModel value="cadillac" name="cadillac"> CADILLAC
+                </div>
+
+
+                <input type="submit" value="FILTER SEARCH">
+        </form>
+
+            <!-- <form class="filterform" id="pricefilterform" *ngIf="priceform" (ngSubmit)="priceSearch(vehiclepriceform)" #vehiclepriceform="ngForm">
+
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="10000less" ngModel name="10000"> Less than $10,000
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="20000less" ngModel name="20000"> $10,000 - $20,000
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="30000less" ngModel name="30000"> $20,000 - $30,000
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="40000less" ngModel name="40000"> $30,000 - $40,000
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="50000less" ngModel name="50000"> $40,000 - $50,000
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="50000more" ngModel name="50000more"> Over $50,000
+                </div> -->
+
+<!-- 
+                <input type="submit" value="FILTER SEARCH">
+        </form> --> 
+
+            <form class="filterform" id="categoryfilterform" *ngIf="categoryform" (ngSubmit)="categorySearch(vehiclecategoryform)" #vehiclecategoryform="ngForm">
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="suv" name="suv" ngModel> SUV
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="pick-up" name="4x4" ngModel> 4x4(OFFROAD)
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="sedan" name="sedan" ngModel> SEDAN
+                </div>
+
+                <div class="checkcontainer" >
+                    <input type="checkbox" value="coupe" name="coupe" ngModel> COUPE
+                </div>
+
+
+                <input type="submit" value="FILTER SEARCH">
+        </form>
+
+        </div>
+
+    </div>
+
+    <div class="carslist">
+    
+            <div class="carcard" *ngFor="let vehicle of vehicles">
+                
+                <img src="http://localhost:8888/uploads/{{ vehicle['main_img']}}">
+                <div class="carinfo">
+                    <h2>{{ vehicle['make'] }} {{ vehicle['model'] }}</h2>
+                    <p>{{ vehicle['price'] }} P/DAY</p>
+                    <p>{{ vehicle['category'] }}</p>
+                    <a routerLink="/singleCar/{{ vehicle['vehicle_id'] }}" class="rentbtn">RENT NOW</a>
+                </div>
+
+            </div>
+         
+    </div>
+</div>

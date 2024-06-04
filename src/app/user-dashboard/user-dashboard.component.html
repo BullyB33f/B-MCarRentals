@@ -1,0 +1,51 @@
+<div class="userpagebody">
+
+
+
+    
+
+    <div class="column" >
+        <h2>USER PROFILE: {{ user['user_fullname'] }} </h2>
+        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/profile-5590850-4652486.png?f=webp">
+        <!-- <h2>{{ currentdate | date }}</h2> -->
+        <div class="userinfo" *ngIf="hasData">
+            <h4>USER ID: {{ user['user_id'] }}</h4>
+            <h4 >NAME: {{ user['user_fullname'] }}</h4>
+            <h4>AGE: {{ user['user_age'] }}</h4>
+            <h4>DRIVER'S LICENSE NO. :{{ user['drivers_license_number'] }}</h4>
+            <h4>TRN: {{ user['trn'] }}</h4>
+            <h4>EMAIL: {{ user['user_email'] }}</h4>
+            <h4>{{ user['current_vehicle'] }}</h4>
+            
+            <a routerLink="/edituser/{{ user['user_id'] }}">EDIT INFO</a>
+            <a routerLink="/deleteuser/{{ user['user_id'] }}">DELETE PROFILE</a>
+            <a routerLink="/login" (click)="logOutFunc()">LOGOUT</a>
+        </div>
+        
+    </div>
+
+
+    <div class="column" *ngIf="vehiclehasData">
+        <h2 class="staatliches-regular">VEHICLES</h2>
+        <img src="http://localhost:8888/uploads/{{ vehicleData['main_img']}}">
+            <div class="userinfo">
+                <h4>{{ vehicleData['make'] }} {{ vehicleData['model'] }}</h4>
+                <h4>{{ vehicleData['price'] }} PER/DAY</h4>
+                <h4>MINIMUM RENTAL DAYS: {{ vehicleData['minimum_rentdays'] }}</h4>
+                <h4>VEHICLE DUE FOR RETURN ON : {{ vehicleData['rent_end'] }}</h4>
+                <h4 class="warning" *ngIf="overdue">RENTAL IS OVERDUE, IF NOT RETURNED IN 2 DAYS, THE AUTHORITIES WILL BE CALLED</h4>
+            </div>
+    </div>
+    <div class="column no-vehicle" *ngIf="!vehiclehasData  && user['role'] == 'user'" >
+        <h2 class="staatliches-regular">VEHICLES</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdx7D9k0FHe0LOYFyoA-Web1L2uBisrHYboA&s">
+            <div class="userinfo">
+                <h4>You currently aren't renting a vehicle, lets get you started!</h4>
+                <a routerLink="/allcars">START RENTING</a>
+            </div>
+    </div>
+
+
+
+</div>
+

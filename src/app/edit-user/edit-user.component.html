@@ -1,0 +1,42 @@
+<div class="editvehiclediv">
+    <h2 class="staatliches-regular">EDIT USER </h2>
+  
+
+    <form (ngSubmit)="updateUser(editUserForm)" #editUserForm="ngForm" >
+
+        <div class="inputbox">
+                <h4>NAME</h4>
+                <input type="text" ngModel name="fullname"  >
+        </div>
+        <div class="inputbox">
+                <h4>AGE</h4>
+                <input type="text" ngModel name="age"  >
+        </div>
+        <div class="inputbox">
+            <h4>Driver's License No.</h4>
+            <input type="text" ngModel name="driverno" >
+        </div>
+        <div class="inputbox">
+        <h4>TRN</h4>
+            <input type="text" ngModel name="trn"  >
+        </div>
+        <div class="inputbox">
+            <h4>EMAIL</h4>
+            <input type="text" ngModel name="email" >
+        </div>
+        <div class="inputbox">
+            <h4>PASSWORD</h4>
+            <input type="password" ngModel name="password"  >
+        </div>
+        <div class="inputbox">
+            <input type="text" ngModel name="vehicle_id" readonly  >
+        </div>
+        <div class="inputbox" *ngIf="adminStatus">
+            <input type="text" ngModel name="role"  >
+        </div>
+            
+           
+            <input type="submit" id="submitbtn" value="EDIT USER">
+    </form>
+
+</div>
